@@ -1,4 +1,4 @@
-# COSC349-Assignment1- Shell Matching Game
+# Cloud/Virtualization-based Shell Matching Game
 
 ## Authors
 Aleisha Telea (funal259)  
