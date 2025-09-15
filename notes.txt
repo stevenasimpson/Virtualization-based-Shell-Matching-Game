@@ -1,0 +1,55 @@
+ http://localhost:8888
+
+Host numbers to avoid
+0 - used to identify the network itself
+255 - usually used for the broadcast address
+1 - used as a gateway or a router
+
+IP Addresses to avoid as reused for internal networks
+10.0.0.0/8
+172.16.0.0/12
+192.168.0.0/16
+
+You should avoid using the IP multicast ranges from 224.0.0.0 to 239.255.255.255 as these addresses may be interpreted specially.
+
+Other special IP Addresses
+127.0.0.1  - is the localhost address
+0.0.0.0 - means that all network interfaces should be used
+
+useful commands I found:
+ netstat -aon | findstr :2200 - to see PID is using port 2200  
+ tasklist /FI "PID eq <PID>" - names the program using that PID (change <PID> with relevant PID)
+
+ VBoxManage controlvm "COSC349-Assignment1_dbserver_1756770120690_13684" poweroff - for when I didn't shut down my dbserver properly
+
+ netstat -aon | findstr :8080 - windows equivalent of lsof -pni
+ taskkill /PID 2660 /F - kills pid using process
+
+Vagrant Commands Cheat Sheet
+
+Basic Commands
+vagrant up           # Start and provision the VM(s).
+vagrant halt         # Stop the VM(s) gracefully.
+vagrant reload       # Restart VM and apply configuration changes.
+vagrant suspend      # Pause the VM (save state).
+vagrant resume       # Resume a suspended VM.
+vagrant destroy      # Stop and delete the VM(s).
+
+Status & Info
+vagrant status       # Show the current status of the VM(s).
+vagrant ssh          # SSH into the running VM.
+vagrant global-status # Show status of all Vagrant environments on your machine.
+
+Provisioning & Config
+vagrant provision    # Run provisioning scripts again without rebooting.
+vagrant box list     # List all boxes installed locally.
+vagrant box add [box-name]    # Download and add a new box.
+vagrant box remove [box-name] # Remove a box from local storage.
+
+Networking & Port Forwarding
+vagrant port         # Show forwarded ports for the running VM.
+
+Debugging & Help
+vagrant up --debug   # Start VM with detailed debug logs.
+vagrant ssh-config   # Show SSH config details for connecting manually.
+vagrant help         # Show help for commands.
