@@ -1,4 +1,4 @@
-# Cloud/Virtualization-based Shell Matching Game
+# Virtualization-based Shell Matching Game
 
 ## Authors
 Aleisha Telea (funal259)  
